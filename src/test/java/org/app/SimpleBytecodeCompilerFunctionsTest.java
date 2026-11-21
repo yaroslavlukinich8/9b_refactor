@@ -155,13 +155,17 @@ class SimpleBytecodeCompilerFunctionsTest {
         void fibonacci_loop() {
             assertEquals(List.of("832040"), run("""
                     func fib(n) {
-                        a = 0
-                        b = 1
-                        while 
-                        if n < 2 { return n; }
-                        return fib(n - 1) + fib(n - 2);
+                        int a = 0, b = 1, k = 1;
+                        
+                        while  k < n {
+                            b = a + b;
+                            a = b - a;
+                            k = k + 1;
+                        }
+                      
+                        return b;
                     }
-                    print fib(40);
+                        print fib(100);
                     """));
         }
 
