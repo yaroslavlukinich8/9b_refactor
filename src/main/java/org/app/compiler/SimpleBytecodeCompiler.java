@@ -7,10 +7,7 @@ import java.util.*;
 
 public class SimpleBytecodeCompiler {
     private final String src;
-
-    public SimpleBytecodeCompiler(String src) {
-        this.src = src;
-    }
+    public SimpleBytecodeCompiler(String src) { this.src = src; }
 
     public List<Instruction> compile() {
         List<Instruction> code = new ArrayList<>();
